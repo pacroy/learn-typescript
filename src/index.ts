@@ -1,6 +1,6 @@
 console.log(`
 ================================================================================
-1.Introduction
+1. Introduction
 ================================================================================`)
 /*
 TypeScript is built on top of Javascript and to be statically-typed language vs. dynamically-typed JavaScript.
@@ -13,3 +13,17 @@ console.log('Hello world!')
 let age: number = 20;
 // age = 'a'    This can't be done in TypeScript
 console.log(age)
+
+console.log(`
+================================================================================
+2. TS Config File
+================================================================================`)
+/*
+Use `tcs --init` will create TS config file `tsconfig.json` with default values.
+  target: es2016
+  module: commonjs
+  strict: true
+  esModuleInterop: true
+  skipLibCheck: true
+  forceConsistentCasingInFileNames: true
+*/
