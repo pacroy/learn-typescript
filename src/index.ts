@@ -27,3 +27,14 @@ Use `tcs --init` will create TS config file `tsconfig.json` with default values.
   skipLibCheck: true
   forceConsistentCasingInFileNames: true
 */
+
+/*
+We usually organize project structure like this:
+  src/ - TypeScript source codes
+  dist/ - Output JavaScript files
+And we need  to configure rootDir, outDir, removeComments, noEmitOnError in tsconfig.json:
+  "rootDir": "./src",
+  "outDir": "./dist",
+  "removeComments": true,
+  "noEmitOnError": true
+*/
