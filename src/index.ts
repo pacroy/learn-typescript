@@ -160,6 +160,7 @@ console.log(`
 ================================================================================`)
 /*
 If you don't annotate the return type then TS implicitly assume the type from the returned value.
+If your function does not return, annotate with `void`.
 If you annotate the return type then the compiler will check whether the returned value match it.
 You can configure `tsconfig.json` for additional checks:
   - `"noUnusedParameters": true` will check for unused parameters.
@@ -194,3 +195,28 @@ function calculateTax3(income: number, taxYear = 2022) {
   return income * 1.3
 }
 calculateTax3(10_000)
+
+console.log(`
+================================================================================
+9. Objects
+================================================================================`)
+/*
+Objects in JS are dynamic. But in TS, this is not the case.
+You can annotate object properties and their type.
+When you assign values then you need to assign all the properties (cannot assign `null` or `undefined`).
+You can make property optional by using `?` but make sure it conceptually makes sense.
+You can make property readonly after its first assignment by using `readonly`
+You can also add a function property by using : (parameter1: type1) => return_type
+*/
+let employee: {
+  readonly id: number,
+  name: string,
+  retire: (date: Date) => void
+} = { 
+  id: 1,
+  name: 'Eddie',
+  retire: (date: Date) => {
+    console.log(date)
+  }
+}
+// employee.id = 2  // This will be error
