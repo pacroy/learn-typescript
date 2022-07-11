@@ -110,3 +110,17 @@ numbers3[0] = 1
 
 // forEach can be used to iterate through elements in an Array
 numbers.forEach(n => console.log(n.toString()))
+
+console.log(`
+================================================================================
+6. Tuples
+================================================================================`)
+/*
+Tuple is a fixed-length Array that each element has fixed type.
+Tuplea are usually used with 2 elements like key-value pairs.
+Tuple is transpiled into ordinary JS array.
+*/
+let user: [number, string] = [1, 'Dustin']
+console.log(user)
+user.push(1)  // However, you can still use JS Array functions to modify the array which may break Tuples concept
+console.log(user)
