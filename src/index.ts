@@ -281,3 +281,15 @@ let textBox: UIWidget = { // this object must implement all members of Draggable
   drag: () => {},
   resize: () => {}
 }
+console.log(textBox)
+
+console.log(`
+================================================================================
+13. Literal Type
+================================================================================`)
+/*
+You can limit the values to assign to a variable using literal.
+*/
+type Quantity = 50 | 100 // This is literal type
+let quantity: Quantity = 50  // This means quantity can be either 50 or 100 only.
+console.log(quantity)
