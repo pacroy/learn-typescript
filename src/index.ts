@@ -152,4 +152,4 @@ enum Size3 {
 }
 
 let mySize: Size = Size.Small
-console.log(mySize)
+console.log(mySize) // This prints the value of the constant
