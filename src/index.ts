@@ -240,3 +240,20 @@ let employee2: Employee = {
     console.log(date)
   }
 }
+
+console.log(`
+================================================================================
+11. Union Type
+================================================================================`)
+/*
+You can declare a parameter with more than one type using union (`|`) operator.
+But you need to determine the type during runtime using `typeof`.
+*/
+function kgToLbs(weight: number | string) {
+  if (typeof weight === 'number')
+    return weight * 2.2
+  else
+    return parseInt(weight) * 2.2
+}
+console.log(kgToLbs(10))
+console.log(kgToLbs('10kg'))
