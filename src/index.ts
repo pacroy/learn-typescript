@@ -220,3 +220,23 @@ let employee: {
   }
 }
 // employee.id = 2  // This will be error
+
+console.log(`
+================================================================================
+10. Type Aliases
+================================================================================`)
+/*
+To stop DRY principle of declaring employee object above, use `type` alias.
+*/
+type Employee = {
+  readonly id: number,
+  name: string,
+  retire: (date: Date) => void
+}
+let employee2: Employee = { 
+  id: 2,
+  name: 'Robin',
+  retire: (date: Date) => {
+    console.log(date)
+  }
+}
