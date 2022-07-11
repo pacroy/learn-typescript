@@ -291,5 +291,27 @@ console.log(`
 You can limit the values to assign to a variable using literal.
 */
 type Quantity = 50 | 100 // This is literal type
+type Metric = 'cm' | 'inch' // Literal type does not need to be just number but can be string
 let quantity: Quantity = 50  // This means quantity can be either 50 or 100 only.
 console.log(quantity)
+
+console.log(`
+================================================================================
+14. Nullable Type
+================================================================================`)
+/*
+Just use a union type with null.
+*/
+function greet(name: string) {
+  console.log(name.toUpperCase())
+}
+// greet(null)  // This will be error
+
+function greet2(name: string | null) {
+  if (name)
+    console.log(name.toUpperCase())
+  else
+    console.log('Hola!')
+}
+greet2(null)
+// greet2(undefined)  // This will be error, unless you include `undefined` as a unoin type.
