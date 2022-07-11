@@ -174,7 +174,7 @@ function calculateTax(income: number, taxYear: number) {
     return income * 1.2
   return income * 1.3
 }
-calculateTax(10_000, 2022)
+console.log(calculateTax(10_000, 2022))
 
 // These 2 statements will be error
 // calculateTax(10_000, 2022, 1)
@@ -186,7 +186,7 @@ function calculateTax2(income: number, taxYear?: number) {
     return income * 1.2
   return income * 1.3
 }
-calculateTax2(10_000)
+console.log(calculateTax2(10_000))
 
 // Or you can assign a default value
 function calculateTax3(income: number, taxYear = 2022) {
@@ -194,7 +194,7 @@ function calculateTax3(income: number, taxYear = 2022) {
     return income * 1.2
   return income * 1.3
 }
-calculateTax3(10_000)
+console.log(calculateTax3(10_000))
 
 console.log(`
 ================================================================================
@@ -220,6 +220,7 @@ let employee: {
   }
 }
 // employee.id = 2  // This will be error
+console.log(employee)
 
 console.log(`
 ================================================================================
@@ -240,6 +241,7 @@ let employee2: Employee = {
     console.log(date)
   }
 }
+console.log(employee2)
 
 console.log(`
 ================================================================================
