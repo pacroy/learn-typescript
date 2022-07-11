@@ -124,3 +124,32 @@ let user: [number, string] = [1, 'Dustin']
 console.log(user)
 user.push(1)  // However, you can still use JS Array functions to modify the array which may break Tuples concept
 console.log(user)
+
+console.log(`
+================================================================================
+7. Enums
+================================================================================`)
+/*
+Enums is a list of related constants.
+Behind the scene, Enums is transpiled into a JS function
+*/
+enum Size {
+  Small,  // By default, the first constant is assigned number 0
+  Medium,
+  Large
+}
+
+enum Size2 {
+  Small = 1,  // You can override the value of each constant
+  Medium,
+  Large
+}
+
+enum Size3 {
+  Small = 'S',  // Or you can assign string as the value
+  Medium = 'M',
+  Large = 'L'
+}
+
+let mySize: Size = Size.Small
+console.log(mySize)
