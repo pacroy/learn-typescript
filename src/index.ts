@@ -38,3 +38,18 @@ And we need  to configure rootDir, outDir, removeComments, noEmitOnError in tsco
   "removeComments": true,
   "noEmitOnError": true
 */
+
+console.log(`
+================================================================================
+3. Debugging
+================================================================================`)
+/*
+1. Configure `"sourceMap": true` in `tsconfig.json`.
+2. Go to `Run and Debug` on the sidebar and click link `create a launch.json file` and choose `Node.js`.
+3. This creates file `.vscode/launch.json` in the repository.
+4. Add `"preLaunchTask": "tsc: build - tsconfig.json"` just under element `program` and before `outFiles`.
+5. Now, you can start debugging by adding a breakpoint and pressing F5.
+*/
+if (age < 50 )
+  age += 10
+console.log(age)
