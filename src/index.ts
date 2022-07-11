@@ -53,3 +53,34 @@ console.log(`
 if (age < 50 )
   age += 10
 console.log(age)
+
+console.log(`
+================================================================================
+4. Primitive Types
+================================================================================`)
+/*
+In JavaScript:
+  number
+  string
+  boolean
+  null
+  undefined
+  object
+
+In TypeScript:
+  any
+  unknown
+  never
+  enum
+  tuple
+*/
+
+let sales: number = 123_456_789
+let course: string = 'TypeScript'
+let is_published: boolean = true
+
+// In TypeScript, we don't need to annotate the type as it can be inferred from the value assigned
+let sales2 = 123_456_789
+let course2 = 'TypeScript'
+let is_published2 = true
+let level // this is type `any`
