@@ -75,7 +75,7 @@ In TypeScript:
   tuple
 */
 
-let sales: number = 123_456_789
+let sales: number = 123_456_789 // In TypeScript, you can separate number digit with underscore for better readability.
 let course: string = 'TypeScript'
 let is_published: boolean = true
 
@@ -153,3 +153,44 @@ enum Size3 {
 
 let mySize: Size = Size.Small
 console.log(mySize) // This prints the value of the constant
+
+console.log(`
+================================================================================
+8. Functions
+================================================================================`)
+/*
+If you don't annotate the return type then TS implicitly assume the type from the returned value.
+If you annotate the return type then the compiler will check whether the returned value match it.
+You can configure `tsconfig.json` for additional checks:
+  - `"noUnusedParameters": true` will check for unused parameters.
+  - `"noImplicitReturns": true` will check whether all code paths return.
+  - `"noUnusedLocals": true` will check whether there's no unused local variables
+*/
+
+// TS requires you to supply exact number of argument, unlike JS.
+function calculateTax(income: number, taxYear: number) {
+  if (taxYear < 2022)
+    return income * 1.2
+  return income * 1.3
+}
+calculateTax(10_000, 2022)
+
+// These 2 statements will be error
+// calculateTax(10_000, 2022, 1)
+// calculateTax(10_000)
+
+// You can make parameter optional by using `?` but you need to check for undefined.
+function calculateTax2(income: number, taxYear?: number) {
+  if ((taxYear || 2022) < 2022)
+    return income * 1.2
+  return income * 1.3
+}
+calculateTax2(10_000)
+
+// Or you can assign a default value
+function calculateTax3(income: number, taxYear = 2022) {
+  if (taxYear < 2022)
+    return income * 1.2
+  return income * 1.3
+}
+calculateTax3(10_000)
