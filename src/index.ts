@@ -84,3 +84,11 @@ let sales2 = 123_456_789
 let course2 = 'TypeScript'
 let is_published2 = true
 let level // this is type `any`
+
+// We can assign any type of value to `any` variable, but this kills the benefit of using TypeScript
+level = 1
+level = 'a'
+
+// function render(document) { // You can turn off this error by setting `"noImplicitAny": false` in tsconfig.json
+//   console.log(document)
+// }
