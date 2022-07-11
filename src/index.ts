@@ -300,7 +300,7 @@ console.log(`
 14. Nullable Type
 ================================================================================`)
 /*
-Just use a union type with null.
+If a parameter can be null, you can use a union type with `null`.
 */
 function greet(name: string) {
   console.log(name.toUpperCase())
@@ -315,3 +315,34 @@ function greet2(name: string | null) {
 }
 greet2(null)
 // greet2(undefined)  // This will be error, unless you include `undefined` as a unoin type.
+
+console.log(`
+================================================================================
+15. Optional Chaining
+================================================================================`)
+type Customer = {
+  birthday: Date,
+  birthday2?: Date  // Optional property
+}
+
+function getCustomer(id: number): Customer | null | undefined {
+  return id === 0 ? null : { birthday: new Date() }
+}
+
+let customer0 = getCustomer(0)
+let customer1 = getCustomer(1)
+if (customer0 != null && customer0 != undefined)  // This check can be omitted by using optional property access operator (`?.`)
+  console.log(customer0.birthday)
+
+console.log(customer0?.birthday) // Get undefined
+console.log(customer0?.birthday?.getFullYear())
+console.log(customer1?.birthday)
+console.log(customer1?.birthday?.getFullYear())
+
+// We can use the same concept on Arrays
+let customers: string[] = []
+console.log(customers?.[0])
+
+// And function call
+let log: any = null
+log?.('sample message')
