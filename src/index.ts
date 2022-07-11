@@ -259,3 +259,25 @@ function kgToLbs(weight: number | string) {
 }
 console.log(kgToLbs(10))
 console.log(kgToLbs('10kg'))
+
+console.log(`
+================================================================================
+12. Intersection Type
+================================================================================`)
+/*
+You can declare a parameter with more than one type at the same time using intersection (`&`) operator.
+*/
+type Draggable = {
+  drag: () => void  // Dummy function for demonstration purpose only
+}
+
+type Resizable = {
+  resize: () => void  // Dummy function for demonstration purpose only
+}
+
+type UIWidget = Draggable & Resizable
+
+let textBox: UIWidget = { // this object must implement all members of Draggable and Resizable
+  drag: () => {},
+  resize: () => {}
+}
