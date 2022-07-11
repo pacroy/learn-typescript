@@ -92,3 +92,21 @@ level = 'a'
 // function render(document) { // You can turn off this error by setting `"noImplicitAny": false` in tsconfig.json
 //   console.log(document)
 // }
+
+console.log(`
+================================================================================
+5. Arrays
+================================================================================`)
+let numbers = [1, 2, 3] // In JavaScript, element can be any type. In TypeScript, the type is inferred from the values assigned
+// let number2: number[] = [1, 2, 'a'] // This is error
+
+let numbers2 = [] // This array is type of any, which should be avoided
+numbers2[0] = 1
+numbers2[1] = 'a'
+
+let numbers3: number[] = []
+numbers3[0] = 1
+// numbers3[1] = 'a' // This is error
+
+// forEach can be used to iterate through elements in an Array
+numbers.forEach(n => console.log(n.toString()))
